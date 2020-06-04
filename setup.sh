@@ -12,3 +12,7 @@ set -x
   ln -sf $SCRIPT_DIR/fish/config.fish $HOME/.config/fish/config.fish
   ln -sf $SCRIPT_DIR/fish/fish_variables $HOME/.config/fish/fish_variables
 }
+
+: "installing fisher" && {
+  curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs git.io/fisher
+}
