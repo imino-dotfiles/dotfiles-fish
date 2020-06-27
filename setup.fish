@@ -1,11 +1,8 @@
-#! /bin/fish
+#!/bin/fish
 
-: "export" &&
-{
-  SCRIPT_DIR=$(cd $(dirname $0); pwd)
-}
+# export
+set pwd (realpath ./)
 
-: "symlink" &&
-{
-  ln -sf $SCRIPT_DIR/fish/fish $HOME/.config/
-}
+# symlink
+ln -nsf $pwd/fish/fish/* ~/.config/fish/ 
+ln -nsf $pwd/fish/source/* ~/.config/fish/
